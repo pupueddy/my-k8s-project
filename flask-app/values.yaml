@@ -1,0 +1,18 @@
+replicas: 3  # Number of replicas (copies) of your app
+
+image:
+  repository: flask-app  # Name of your Docker image
+  tag: v2   # Tag of your Docker image (e.g., latest or v2)
+
+service:
+  type: NodePort  # Service type (NodePort, ClusterIP, etc.)
+  nodePort: 30000  # Port to expose your app externally
+
+serviceAccount:
+  create: false  # Disable the creation of a ServiceAccount
+
+ingress:
+  enabled: false  # Disable Ingress for now
+
+autoscaling:
+  enabled: false  # Disable autoscaling for now

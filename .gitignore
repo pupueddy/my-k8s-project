@@ -1,0 +1,10 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore Docker files
+*.dockerfile
+
+# Ignore Kubernetes and Terraform states
+*.tfstate
+.terraform/

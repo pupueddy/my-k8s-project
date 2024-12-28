@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-flask-app-service  # Helm dynamically sets the name
+spec:
+  selector:
+    app: flask-app  # Links the service to pods with this label
+  ports:
+    - protocol: TCP  # Protocol used (TCP for web apps)
+      port: 80  # External port to access the app
+      targetPort: 5000  # Internal port the app listens on
+  type: {{ .Values.service.type }}  # Service type (NodePort, ClusterIP, etc.), from values.yaml
+  {{- if eq .Values.service.type "NodePort" }}
+  nodePort: {{ .Values.service.nodePort }}  # NodePort for external access, if specified
+  {{- end }}
