@@ -1,4 +1,4 @@
-replicas: 3  # Number of replicas (copies) of your app
+replicas: 5  # Number of replicas (copies) of your app
 
 image:
   repository: flask-app  # Name of your Docker image
